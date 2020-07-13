@@ -32,3 +32,8 @@ height: auto;
 .error-message-content {
     background-color: #ffff00;
 }
+
+form.register-form > p {
+    display: flex;
+    flex-direction: column;
+}
