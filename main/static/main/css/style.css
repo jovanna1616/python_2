@@ -37,3 +37,6 @@ form.register-form > p {
     display: flex;
     flex-direction: column;
 }
+.new-todo-form {
+    background-color: #d3d3d3;
+}

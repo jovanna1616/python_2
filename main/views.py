@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
-from .forms import NewUserForm
+from .forms import NewUserForm, NewTodoForm
 from .models import Todo
 
 # Create your views here.
@@ -54,8 +54,20 @@ def logout_request(request):
     logout(request)
     messages.info(request, "Logged out successfully!")
     return redirect("main:homepage")
+                                    
+                                    
 
 def todos(request):
+    form = NewTodoForm()
+    if request.method == "POST":
+        # set data
+        form = NewTodoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            title = form.cleaned_data["title"]
+            messages.info(request, f"You created new todo with title {title}")
+        return redirect("main:todos")
+
     return render(request=request,
                   template_name="main/todos.html",
-                  context={"todos": Todo.objects.all})
+                  context={"todos": Todo.objects.all, "form": form})

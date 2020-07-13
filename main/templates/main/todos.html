@@ -1,12 +1,18 @@
 {% extends "main/header.html" %}
 {% block content %}
     <div>
-        <h1>TODOS PAGE</h1>
-        {% for todo in todos %}
-        <h2>{{todo.title}}</h2>
-        <p>{{todo.content}}</p>
-        <p>created by: {{todo.author}}</p>
-        <p>created at:{{todo.created_at}}</p>
-        {% endfor %}
+        {% include "main/includes/forms/create-todo-form.html" %}
+        <div>
+            <h1>TODOS PAGE</h1>
+            <a href="">Create new TODO</a>
+            {% for todo in todos %}
+                <h2>{{todo.title}}</h2>
+                <p>{{todo.content}}</p>
+                <p>created by: {{todo.author}}</p>
+                <p>created at:{{todo.created_at}}</p>
+                <a href="">Edit</a>
+                <a href="">Delete</a>
+            {% endfor %}
+        </div>
     </div>
 {% endblock %}

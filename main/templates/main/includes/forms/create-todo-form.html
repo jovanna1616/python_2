@@ -1,0 +1,7 @@
+<div class="new-todo-form">
+    <form method="POST" action="/todos/">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Create new todo</button>
+    </form>
+</div>
