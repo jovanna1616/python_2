@@ -1,0 +1,8 @@
+{% extends "main/header.html" %}
+{% block content %}
+    <div>
+        <p>Are you sure you want to delete "{{todo.title}}"?</p>
+        <a href="/todos">Cancel</a>
+        {% include "main/includes/forms/delete-todo-form.html" %}
+    </div>
+{% endblock %}

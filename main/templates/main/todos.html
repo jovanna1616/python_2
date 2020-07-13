@@ -10,8 +10,8 @@
                 <p>{{todo.content}}</p>
                 <p>created by: {{todo.author}}</p>
                 <p>created at:{{todo.created_at}}</p>
-                <a href="">Edit</a>
-                <a href="">Delete</a>
+                <a href="{% url 'main:update_todo' todo_id=todo.id %}">Edit</a>
+                <a href="{% url 'main:delete_todo' todo_id=todo.id %}">Delete</a>
             {% endfor %}
         </div>
     </div>

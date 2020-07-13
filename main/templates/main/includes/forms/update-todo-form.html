@@ -1,0 +1,7 @@
+<div class="todo-form">
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">Update todo</button>
+    </form>
+</div>
