@@ -3,6 +3,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import authenticate, login, logout
 from django.contrib import messages
 from .forms import NewUserForm
+from .models import Todo
 
 # Create your views here.
 
@@ -56,4 +57,5 @@ def logout_request(request):
 
 def todos(request):
     return render(request=request,
-                  template_name="main/todos.html")
+                  template_name="main/todos.html",
+                  context={"todos": Todo.objects.all})

@@ -2,5 +2,11 @@
 {% block content %}
     <div>
         <h1>TODOS PAGE</h1>
+        {% for todo in todos %}
+        <h2>{{todo.title}}</h2>
+        <p>{{todo.content}}</p>
+        <p>created by: {{todo.author}}</p>
+        <p>created at:{{todo.created_at}}</p>
+        {% endfor %}
     </div>
 {% endblock %}
