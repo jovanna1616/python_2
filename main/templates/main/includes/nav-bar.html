@@ -1,6 +1,9 @@
 <div class="header-menu">
     <a href="/">Todo</a>
-    <a href="/login">Login</a>
-    <a href="/register">Register</a>
-    <a href="/logout">Logout</a>
+    {% if user.is_authenticated %}
+        <a href="/logout">Logout</a>
+    {% else %}
+        <a href="/login">Login</a>
+        <a href="/register">Register</a>
+    {% endif %}
 </div>

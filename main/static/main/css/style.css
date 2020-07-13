@@ -2,7 +2,7 @@ body {
     margin: 0;
 }
 .header-menu {
-    background-color: lightgrey;
+    background-color: #d3d3d3;
     width: 100%;
     position: fixed;
     top: 0;
@@ -19,10 +19,16 @@ body {
 }
 .header-menu a:hover {
     background: #ddd;
-    color: black;
+    color: 000000;
   }
 .main-container {
 padding: 1rem;
-margin-top: 2rem;
+margin-top: 15rem;
 height: auto;
+}
+.hidden {
+    display: none;
+}
+.error-message-content {
+    background-color: #ffff00;
 }

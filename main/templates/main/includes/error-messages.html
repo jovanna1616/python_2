@@ -1,0 +1,7 @@
+<div style="margin-top: 3rem;">
+    {% if messages %}
+        {% for message in messages %}
+            <p class="error-message-content">{{message}}</p>
+        {% endfor %}
+    {% endif %}
+</div>
