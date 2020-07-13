@@ -1,8 +1,11 @@
-<head lang="en"></head>
+<head lang="en">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'main/style.css' %}" />
+</head>
 
 <body>
     {% include "main/includes/nav-bar.html" %}
-    <div>
+    <div class="main-container">
         {% block content %}
         {% endblock %}
     </div>
